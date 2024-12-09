@@ -1,0 +1,56 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum Category {
+  Breakfast
+  Lunch 
+  Dinner
+  Snack
+  Appetizer
+  Beverage
+  Dessert
+  Soup
+  Salad
+}
+
+model Recipe {
+    id String           @id @default(uuid())
+    name String
+    description String
+    image String
+    cookingTime String
+    category     Category
+    createdAt new Date()
+    ingredients Ingredient[]
+}
+
+
+
+model Ingredient {
+  id String           @id @default(uuid())
+  quantity  Float
+  name String
+  measuringUnit String?
+  recipeId String
+  recipe Recipe @relation(fields: [recipeId], references: [id])
+}
+
+model User {
+  id String           @id @default(uuid())
+  email String @unique
+  password String
+  username String
+}
+
