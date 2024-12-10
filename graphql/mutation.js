@@ -1,40 +1,23 @@
-const prisma = require("../database/db")
 const { GraphQLString, GraphQLList, GraphQLObjectType } = require('graphql');
-const {RecipeType, IngredientType} = require("./query")
+const {RecipeType, IngredientInput} = require("./query")
+const {createRecipe} = require("../database/query")
 
 const Mutation = new GraphQLObjectType({
     name : "Mutation",
     fields : {
-        createRecipe : {
+        postRecipe : {
             type : RecipeType,
             args : {
                 name : { type: GraphQLString },
                 description : { type: GraphQLString }, 
+                image : { type: GraphQLString },
+                category : { type: GraphQLString }, 
                 cookingTime : { type: GraphQLString },
-                category : { type: GraphQLString },
-                ingredients: { type: new GraphQLList(IngredientType) }
+                ingredients: { type: new GraphQLList(IngredientInput) },
+                instructions: { type: new GraphQLList(GraphQLString) },
             },
             async resolve(parent, args) {
-              const id = await prisma.recipe.create({
-                 data : {
-                     name : args.name,
-                     description : args.description,
-                     cookingTime : args.cookingTime,
-                     category : args.category
-                 }
-             })
-             
-             for (let i = 0; i < args.ingredients.length; i++) {
-                 await prisma.ingredient.create({
-                     data : {
-                         name : args.ingredients[i].name,
-                         quantity : args.ingredients[i].quantity,
-                         measuringUnit : args.ingredients[i].measuringUnit,
-                         recipeId : id.id
-                     }
-                 })
-             }
-
+              await createRecipe(args)
              return args
             }
         }

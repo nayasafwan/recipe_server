@@ -1,4 +1,4 @@
-const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt,  GraphQLID, GraphQLEnumType } = require('graphql');
+const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat , GraphQLID, GraphQLEnumType, GraphQLInputObjectType } = require('graphql');
 const prisma = require("../database/db")
 
 
@@ -17,6 +17,16 @@ const CategoryEnumType = new GraphQLEnumType({
     }
 })
 
+const IngredientInput = new GraphQLInputObjectType({
+    name: 'IngredientInput',
+    fields: {
+        name: { type: GraphQLString },
+        quantity: { type: GraphQLFloat },
+        measuringUnit: { type: GraphQLString }
+    }
+});
+
+
 const IngredientType = new GraphQLObjectType({
     name: 'Ingredient',
     fields: () => ({
@@ -33,8 +43,11 @@ const RecipeType = new GraphQLObjectType({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
         description: { type: GraphQLString },
+        image : { type: GraphQLString },
         category : { type: CategoryEnumType },
-        ingredients: { type: new GraphQLList(IngredientType) }
+        cookingTime: { type: GraphQLString },
+        ingredients: { type: new GraphQLList(IngredientType) },
+        instructions: { type: new GraphQLList(GraphQLString) },
     })
 })
 
@@ -94,4 +107,4 @@ const RootQuery = new GraphQLObjectType({
 })
 
 
-module.exports = {RootQuery, RecipeType, IngredientType, UserType}
+module.exports = {RootQuery, RecipeType, IngredientInput, UserType}

@@ -28,12 +28,13 @@ enum Category {
 model Recipe {
     id String           @id @default(uuid())
     name String
-    description String
+    description String  @db.Text
     image String
     cookingTime String
     category     Category
-    createdAt new Date()
+    createdAt DateTime     @default(now())
     ingredients Ingredient[]
+    instructions Instruction[]
 }
 
 
@@ -45,6 +46,14 @@ model Ingredient {
   measuringUnit String?
   recipeId String
   recipe Recipe @relation(fields: [recipeId], references: [id])
+}
+
+model Instruction {
+  id String           @id @default(uuid())
+  name String
+  order Int 
+  recipeId String 
+  recipe Recipe @relation(fields: [recipeId], references: [id])    
 }
 
 model User {
