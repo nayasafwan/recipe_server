@@ -1,5 +1,6 @@
 const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat , GraphQLID, GraphQLEnumType, GraphQLInputObjectType } = require('graphql');
 const prisma = require("../database/db")
+const logger = require("../logger")
 
 
 const CategoryEnumType = new GraphQLEnumType({
@@ -46,6 +47,7 @@ const RecipeType = new GraphQLObjectType({
         image : { type: GraphQLString },
         category : { type: CategoryEnumType },
         cookingTime: { type: GraphQLString },
+        createdAt : { type: GraphQLString },
         ingredients: { type: new GraphQLList(IngredientType) },
         instructions: { type: new GraphQLList(GraphQLString) },
     })
