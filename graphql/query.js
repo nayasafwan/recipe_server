@@ -1,4 +1,4 @@
-const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat , GraphQLID, GraphQLEnumType, GraphQLInputObjectType } = require('graphql');
+const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat , GraphQLScalarType, GraphQLID, GraphQLEnumType, GraphQLInputObjectType } = require('graphql');
 const prisma = require("../database/db")
 const logger = require("../logger")
 
@@ -6,12 +6,12 @@ const logger = require("../logger")
 const CategoryEnumType = new GraphQLEnumType({
     name: 'Category',
     values: {
-        BREAKFAST: { value: 'BREAKFAST' },
-        LUNCH: { value: 'LUNCH' },
-        DINNER: { value: 'DINNER' },
-        SNACK: { value: 'SNACK' },
+        BREAKFAST: { value: 'Breakfast' },
+        LUNCH: { value: 'Lunch' },
+        DINNER: { value: 'Dinner' },
+        SNACKS: { value: 'Snacks' },
         APPETIZER : { value: 'Appetizer' },
-        BEVERAGE : { value: 'Beverage' },
+        BEVERAGE : { value: 'Beverage' }, 
         DESSERT : { value: 'Dessert' },
         SOUP : { value: 'Soup' },
         SALAD : { value: 'Salad' }
@@ -33,10 +33,30 @@ const IngredientType = new GraphQLObjectType({
     fields: () => ({
         id: { type: GraphQLID },
         name: { type: GraphQLString },
-        quantity: { type: GraphQLInt },
+        quantity: { type: GraphQLFloat },
         measuringUnit: { type: GraphQLString }
     })
 })
+
+const DateScalar = new GraphQLScalarType({
+    name: 'Date',
+    description: 'Custom Date type',
+    serialize(value) {
+      //To return value
+      return value.toISOString();
+    },
+    parseValue(value) {
+      // Graphql receives data in string format and converts it to Date
+      return new Date(value);
+    },
+    parseLiteral(ast) {
+        // values directly written in the GraphQL query
+      if (ast.kind === Kind.STRING) {
+        return new Date(ast.value);
+      }
+      return null;
+    },
+  });
 
 const RecipeType = new GraphQLObjectType({
     name: 'Recipe',
@@ -47,7 +67,7 @@ const RecipeType = new GraphQLObjectType({
         image : { type: GraphQLString },
         category : { type: CategoryEnumType },
         cookingTime: { type: GraphQLString },
-        createdAt : { type: GraphQLString },
+        createdAt : { type: DateScalar },
         ingredients: { type: new GraphQLList(IngredientType) },
         instructions: { type: new GraphQLList(GraphQLString) },
     })
@@ -69,7 +89,7 @@ const RootQuery = new GraphQLObjectType({
         "recipes" : {
             "type" : new GraphQLList(RecipeType),
             "args" : {
-                "skip" : { "type" : GraphQLInt },
+                "skip" : { "type" : GraphQLInt }, 
                 "take" : { "type" : GraphQLInt }
             },
             "resolve" : async(parent, args) => {

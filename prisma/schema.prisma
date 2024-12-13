@@ -17,7 +17,7 @@ enum Category {
   Breakfast
   Lunch 
   Dinner
-  Snack
+  Snacks
   Appetizer
   Beverage
   Dessert
@@ -29,12 +29,12 @@ model Recipe {
     id String           @id @default(uuid())
     name String
     description String  @db.Text
-    image String
+    image String   @db.Text
     cookingTime String
     category     Category
     createdAt DateTime     @default(now())
     ingredients Ingredient[]
-    instructions Instruction[]
+    instructions Instruction[] 
 }
 
 
