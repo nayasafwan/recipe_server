@@ -14,7 +14,7 @@ const createRecipe = async (recipe) =>{
 
     const {name, description, image, cookingTime, category, ingredients, instructions} = recipe;
     try{
-        const recipe = await prisma.recipe.create({
+        const recipe = await prisma.recipe.create({ 
             data : {
                 name,
                 description,
@@ -40,10 +40,72 @@ const createRecipe = async (recipe) =>{
     }
 }
 
+const getRecipes = async (args) => {
+    try {
+        
+        const searchQuery = {}
+        if (args.category){
+            console.log(args.category);
+            searchQuery.category = args.category;
+        }
+
+        if (args.search){
+            searchQuery.name = {
+                contains: args.search
+            }
+        }
+
+        const condition = searchQuery.length > 1 ? {OR : searchQuery} : {...searchQuery};
+
+        logger.info(`Getting recipes based on ${condition}`);
+        return  await prisma.recipe.findMany({
+            skip: args.skip,
+            take: args.take,
+            where: condition
+        }) 
+    } catch (err) {
+        logger.error('Error getting recipes: ', err);
+        return [];
+    }
+}
+
+const searchRecipes = async (args) => {
+
+    const searchQuery = {}
+
+    if (args.category) {
+        searchQuery.category = args.category;
+    }
+
+    if (args.search) {
+        searchQuery.name = {
+            contains: args.search,
+            mode : "insensitive"
+        }
+    }
+
+    // Check if searchQuery has more than one key to apply OR clause
+    const conditions = Object.keys(searchQuery).map((key) => ({
+        [key]: searchQuery[key]
+    }));
+
+    const query = conditions.length > 1 ? {OR : conditions} : {...searchQuery};
+    try {
+        return await prisma.recipe.findMany({
+            where: query
+        });
+    } catch (err) {
+        logger.error(`Error searching recipes with name ${args.name}: `, err);
+        return []
+    }
+}
+
 
 
 module.exports = {
-    createRecipe
+    createRecipe,
+    getRecipes,
+    searchRecipes
 };
 
 

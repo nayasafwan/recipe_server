@@ -1,6 +1,7 @@
 const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat , GraphQLScalarType, GraphQLID, GraphQLEnumType, GraphQLInputObjectType } = require('graphql');
-const prisma = require("../database/db")
+const prisma = require("../database/query")
 const logger = require("../logger")
+const {searchRecipes, getRecipes} = require("../database/query")
 
 
 const CategoryEnumType = new GraphQLEnumType({
@@ -32,7 +33,7 @@ const IngredientType = new GraphQLObjectType({
     name: 'Ingredient',
     fields: () => ({
         id: { type: GraphQLID },
-        name: { type: GraphQLString },
+        name: { type: GraphQLString }, 
         quantity: { type: GraphQLFloat },
         measuringUnit: { type: GraphQLString }
     })
@@ -80,7 +81,7 @@ const UserType = new GraphQLObjectType({
         username: { type: GraphQLString },
         email: { type: GraphQLString },
         password: { type: GraphQLString }
-    })
+    }) 
 })
 
 const RootQuery = new GraphQLObjectType({
@@ -88,15 +89,14 @@ const RootQuery = new GraphQLObjectType({
     "fields" : {
         "recipes" : {
             "type" : new GraphQLList(RecipeType),
-            "args" : {
+            "args" : { 
                 "skip" : { "type" : GraphQLInt }, 
-                "take" : { "type" : GraphQLInt }
+                "take" : { "type" : GraphQLInt },
+                "category" : { "type" : GraphQLString},
+                "search" : { "type" : GraphQLString }
             },
             "resolve" : async(parent, args) => {
-                return await prisma.recipe.findMany({
-                    skip: args.skip,
-                    take: args.take
-                });
+                return await getRecipes(args);
             }
         },
         "recipe" : {
