@@ -1,7 +1,7 @@
 const {PrismaClient} = require('@prisma/client');
 const logger = require("../logger");
 
-
+//to run prisma migration 
 const prisma = new PrismaClient();
 
 // class DatabaseQuery {
@@ -40,12 +40,20 @@ const createRecipe = async (recipe) =>{
     }
 }
 
+const getAllRecipes = async () => {
+    try {
+        return await prisma.recipe.findMany();
+    } catch (err) {
+        logger.error('Error getting all recipes: ', err);
+        return [];
+    }
+}
+
 const getRecipes = async (args) => {
     try {
         
         const searchQuery = {}
         if (args.category){
-            console.log(args.category);
             searchQuery.category = args.category;
         }
 
@@ -57,7 +65,7 @@ const getRecipes = async (args) => {
 
         const condition = searchQuery.length > 1 ? {OR : searchQuery} : {...searchQuery};
 
-        logger.info(`Getting recipes based on ${condition}`);
+        logger.info(`Getting recipes based on ${JSON.stringify(condition)}`);
         return  await prisma.recipe.findMany({
             skip: args.skip,
             take: args.take,
@@ -105,7 +113,8 @@ const searchRecipes = async (args) => {
 module.exports = {
     createRecipe,
     getRecipes,
-    searchRecipes
+    searchRecipes,
+    getAllRecipes
 };
 
 

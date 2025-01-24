@@ -2,6 +2,7 @@ const { GraphQLObjectType, GraphQLString, GraphQLList, GraphQLInt, GraphQLFloat 
 const prisma = require("../database/query")
 const logger = require("../logger")
 const {searchRecipes, getRecipes} = require("../database/query")
+const {getCachedRecipes, isCachEmptyFunc , cashRecipes} = require("../database/cache")
 
 
 const CategoryEnumType = new GraphQLEnumType({
@@ -43,8 +44,7 @@ const DateScalar = new GraphQLScalarType({
     name: 'Date',
     description: 'Custom Date type',
     serialize(value) {
-      //To return value
-      return value.toISOString();
+      return value
     },
     parseValue(value) {
       // Graphql receives data in string format and converts it to Date
@@ -96,7 +96,13 @@ const RootQuery = new GraphQLObjectType({
                 "search" : { "type" : GraphQLString }
             },
             "resolve" : async(parent, args) => {
-                return await getRecipes(args);
+                const isCachEmpty = await isCachEmptyFunc();
+
+                if(isCachEmpty ){
+                    cashRecipes();
+                    return await getRecipes(args);
+                }
+                return await getCachedRecipes(args);
             }
         },
         "recipe" : {
