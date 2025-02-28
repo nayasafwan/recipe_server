@@ -45,7 +45,9 @@ const schema = new GraphQLSchema({
 
 app.use("/graphql", graphqlHTTP({ 
     schema,
-    graphiql: true,
+    graphiql: {
+        editorTheme: "dark",
+    },
  }));
 
 

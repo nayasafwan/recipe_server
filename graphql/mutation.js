@@ -1,6 +1,6 @@
 const { GraphQLString, GraphQLList, GraphQLObjectType } = require('graphql');
 const {RecipeType, IngredientInput} = require("./query")
-const {createRecipe} = require("../database/query")
+const databaseRecipe = require("../controllers/recipe.controller")
 
 const Mutation = new GraphQLObjectType({
     name : "Mutation",
@@ -17,7 +17,7 @@ const Mutation = new GraphQLObjectType({
                 instructions: { type: new GraphQLList(GraphQLString) },
             },
             async resolve(parent, args) {
-              await createRecipe(args)
+              await databaseRecipe.createRecipe(args)
              return args
             }
         }
