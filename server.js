@@ -6,8 +6,8 @@ dotenv.config();
 const { RootQuery } = require("./graphql/query")
 const Mutation = require("./graphql/mutation");
 const {GraphQLSchema} = require("graphql");
+const path = require("path");
 
- 
 
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
@@ -51,10 +51,16 @@ app.use("/graphql", graphqlHTTP({
  }));
 
 
+if(process.env.NODE_ENV !== "test"){
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    })
+    
+}
 
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
-})
+
+module.exports = app;
+
 
 //babel
 //body parser

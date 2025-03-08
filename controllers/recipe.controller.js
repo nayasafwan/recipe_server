@@ -1,7 +1,5 @@
-const prisma = require("./dbInit");
+const { prisma } = require("./dbInit");
 const logger = require("../logger");
-
-
 
 
 class DatabaseRecipe {
@@ -21,10 +19,7 @@ class DatabaseRecipe {
                         create : ingredients
                     },
                     instructions : {
-                        create : instructions.map((instruction, index) =>({
-                            name : instruction,
-                            order : index + 1
-                        }))
+                        create : instructions
                     }
                 }
             })
@@ -82,6 +77,7 @@ class DatabaseRecipe {
                 where: condition
             })
             
+            console.log({recipes : allRecipes, count : countRecipes});
             return {recipes : allRecipes, count : countRecipes};
         } catch (err) {
             logger.error('Error getting recipes: ', err);

@@ -1,0 +1,540 @@
+[
+    {
+        "name": "Nutella Crepes",
+        "description": "These thin, delicate crepes are filled with creamy Nutella, perfect for breakfast, dessert, or a sweet snack.",
+        "image": "https://www.chelseasmessyapron.com/wp-content/uploads/2019/05/Nutella-Crepes-ChelseasMessyApron-1200-3-500x500.jpg",
+        "cookingTime": "20 mins",
+        "category": "DESSERT",
+        "ingredients": [
+            {
+                "name": "All-Purpose Flour",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Milk",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Eggs",
+                "quantity": 2,
+                "measuringUnit": "pieces",
+                "abbreviation": "pcs"
+            },
+            {
+                "name": "Butter (melted)",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Vanilla Extract",
+                "quantity": 1,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tps"
+            },
+            {
+                "name": "Sugar",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Nutella",
+                "quantity": 0.5,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Powdered Sugar (for dusting)",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            }
+        ],
+        "instructions": [
+            "In a mixing bowl, whisk together the flour, milk, eggs, melted butter, vanilla extract, and sugar until the batter is smooth.",
+            "Heat a non-stick pan or crepe pan over medium heat and lightly grease with butter or cooking spray.",
+            "Pour a small amount of batter (about 1/4 cup) into the pan and swirl to spread the batter thinly across the surface.",
+            "Cook the crepe for 1-2 minutes, until the edges start to lift, then flip it over and cook for another 30 seconds to 1 minute.",
+            "Remove the crepe from the pan and place it on a plate. Repeat with the remaining batter.",
+            "Spread a generous amount of Nutella on one half of each crepe.",
+            "Fold the crepe in half, then in half again to form a triangle, or simply roll it up.",
+            "Dust with powdered sugar and serve warm. You can also add fresh fruit or whipped cream on top if desired."
+        ]
+    },
+    {
+        "name": "Crispy Fried Shrimp",
+        "description": "Deliciously crispy shrimp with a light, crunchy batter. Perfect as an appetizer or main dish.",
+        "image": "https://www.allrecipes.com/thmb/dI7tAF6NGd0Ymo8_fUAAwqnZT1Y=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/AR-216969-crunchy-fried-shrimp-DDMFS-4x3-ce19238c015447f1be90f8871409844f.jpg",
+        "cookingTime": "15 mins",
+        "category": "APPETIZER",
+        "ingredients": [
+            {
+                "name": "Shrimp (peeled and deveined)",
+                "quantity": 1,
+                "measuringUnit": "lb"
+            },
+            {
+                "name": "Flour",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Cornstarch",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbs"
+            },
+            {
+                "name": "Baking Powder",
+                "quantity": 1,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tps"
+            },
+            {
+                "name": "Salt",
+                "quantity": 0.5,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tps"
+            },
+            {
+                "name": "Pepper",
+                "quantity": 0.5,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tps"
+            },
+            {
+                "name": "Paprika",
+                "quantity": 1,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tps"
+            },
+            {
+                "name": "Egg",
+                "quantity": 1,
+                "measuringUnit": "large",
+                "abbreviation": "large"
+            },
+            {
+                "name": "Cold Water",
+                "quantity": 0.5,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Vegetable Oil",
+                "quantity": 3,
+                "measuringUnit": "cups",
+                "abbreviation": "cups"
+            }
+        ],
+        "instructions": [
+            "In a bowl, mix flour, cornstarch, baking powder, salt, pepper, and paprika.",
+            "In another bowl, whisk the egg and cold water together.",
+            "Dip the shrimp into the flour mixture, then into the egg wash, and back into the flour mixture for a double coating.",
+            "Heat vegetable oil in a deep skillet or pot over medium-high heat.",
+            "Fry the shrimp in batches, cooking for 2-3 minutes until golden brown and crispy.",
+            "Remove the shrimp from the oil and drain on paper towels.",
+            "Serve with your favorite dipping sauce, such as cocktail sauce or garlic butter."
+        ]
+    },
+    {
+        "name": "Hummus with Veggies",
+        "description": "A healthy snack featuring creamy hummus served with fresh, crunchy vegetables.",
+        "image": "https://www.google.com/search?q=hummus+with+veggies&sca_esv=aebc663c531febdd&rlz=1C1YTUH_enEG1123EG1123&udm=2&biw=1309&bih=582&sxsrf=AHTn8zolwaiXf77T5rewiW2P5YOUfXzRbQ%3A1741211077062&ei=xcXIZ4bKA5SnkdUPy7ClmAQ&oq=hummus+with+ve&gs_lp=EgNpbWciDmh1bW11cyB3aXRoIHZlKgIIADIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEiFOVDUCFijNHAEeACQAQCYAcUIoAHTM6oBDzAuOC4yLjEuMi4xLjIuMbgBA8gBAPgBAZgCFaACrDWoAgrCAgoQIxgnGMkCGOoCwgIHECMYJxjJAsICCBAAGIAEGLEDwgILEAAYgAQYsQMYgwHCAg4QABiABBixAxiDARiKBcICChAAGIAEGEMYigXCAg0QABiABBixAxhDGIoFwgIHEAAYgAQYCsICChAAGIAEGLEDGAqYAxiSBw80LjguMi4xLjIuMS4yLjGgB8le&sclient=img#vhid=wBFMg3tWQj60-M&vssid=mosaic",
+        "cookingTime": "5 mins",
+        "category": "SNACKS",
+        "ingredients": [
+            {
+                "name": "Hummus",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Carrot Sticks",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Cucumber",
+                "quantity": 1,
+                "measuringUnit": "medium",
+                "abbreviation": "medium"
+            },
+            {
+                "name": "Bell Peppers",
+                "quantity": 1,
+                "measuringUnit": "medium",
+                "abbreviation": "medium"
+            }
+        ],
+        "instructions": [
+            "Slice the carrot, cucumber, and bell pepper into sticks.",
+            "Serve the veggies with hummus for dipping."
+        ]
+    },
+    {
+        "name": "Mango Smoothie",
+        "description": "A creamy, tropical mango smoothie that's sweet and refreshing.",
+        "image": "https://www.thecookierookie.com/wp-content/uploads/2016/01/mango-smoothie-recipe-1-2.jpg",
+        "cookingTime": "5 mins",
+        "category": "BEVERAGE",
+        "ingredients": [
+            {
+                "name": "Frozen Mango",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Greek Yogurt",
+                "quantity": 0.5,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Milk",
+                "quantity": 0.5,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Honey",
+                "quantity": 1,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Ice",
+                "quantity": 0.5,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            }
+        ],
+        "instructions": [
+            "Blend all ingredients together until smooth.",
+            "Serve immediately for a refreshing treat."
+        ]
+    },
+    {
+        "name": "Chicken Stir-Fry",
+        "description": "A quick and healthy stir-fry with chicken and vegetables, served with rice for a balanced dinner.",
+        "image": "https://www.allrecipes.com/thmb/xvlRRhK5ldXuGcXad8XDM5tTAfE=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/223382_chicken-stir-fry_Rita-1x1-1-b6b835ccfc714bb6a8391a7c47a06a84.jpg",
+        "cookingTime": "30 mins",
+        "category": "DINNER",
+        "ingredients": [
+            {
+                "name": "Chicken Breast",
+                "quantity": 2,
+                "measuringUnit": "pieces",
+                "abbreviation": "pcs"
+            },
+            {
+                "name": "Bell Peppers",
+                "quantity": 2,
+                "measuringUnit": "medium",
+                "abbreviation": "medium"
+            },
+            {
+                "name": "Broccoli",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Carrot",
+                "quantity": 1,
+                "measuringUnit": "medium",
+                "abbreviation": "medium"
+            },
+            {
+                "name": "Garlic",
+                "quantity": 2,
+                "measuringUnit": "cloves",
+                "abbreviation": "cloves"
+            },
+            {
+                "name": "Ginger",
+                "quantity": 1,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Soy Sauce",
+                "quantity": 3,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Sesame Oil",
+                "quantity": 1,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Rice",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Green Onions",
+                "quantity": 2,
+                "measuringUnit": "stalks",
+                "abbreviation": "stalks"
+            }
+        ],
+        "instructions": [
+            "Cook rice according to package instructions and set aside.",
+            "Cut the chicken into thin strips. Slice the bell peppers, carrot, and broccoli into bite-sized pieces.",
+            "Heat sesame oil in a large pan or wok over medium heat. Add garlic and ginger, cooking until fragrant.",
+            "Add the chicken and cook until browned and cooked through, about 5-7 minutes.",
+            "Add the vegetables to the pan and stir-fry for 3-4 minutes until tender-crisp.",
+            "Pour in the soy sauce and stir to coat the chicken and vegetables.",
+            "Serve the stir-fry over rice and garnish with sliced green onions."
+        ]
+    },
+    {
+        "name": "Spaghetti Bolognese",
+        "description": "A classic Italian pasta dish with a rich and savory tomato-based meat sauce, perfect for dinner.",
+        "image": "https://www.preciouscore.com/wp-content/uploads/2024/06/Spaghetti-Bolognese-Chicken.jpg",
+        "cookingTime": "60 mins",
+        "category": "DINNER",
+        "ingredients": [
+            {
+                "name": "Spaghetti",
+                "quantity": 200,
+                "measuringUnit": "grams",
+                "abbreviation": "gm"
+            },
+            {
+                "name": "Ground Beef",
+                "quantity": 300,
+                "measuringUnit": "grams",
+                "abbreviation": "gm"
+            },
+            {
+                "name": "Onion",
+                "quantity": 1,
+                "measuringUnit": "medium",
+                "abbreviation": "medium"
+            },
+            {
+                "name": "Garlic",
+                "quantity": 2,
+                "measuringUnit": "cloves",
+                "abbreviation": "cloves"
+            },
+            {
+                "name": "Tomato Paste",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Canned Tomatoes",
+                "quantity": 1,
+                "measuringUnit": "can",
+                "abbreviation": "can"
+            },
+            {
+                "name": "Olive Oil",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Salt",
+                "quantity": 0.5,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tsp"
+            },
+            {
+                "name": "Pepper",
+                "quantity": 0.25,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tsp"
+            },
+            {
+                "name": "Basil",
+                "quantity": 1,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Parmesan Cheese",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            }
+        ],
+        "instructions": [
+            "Heat olive oil in a large pan over medium heat. Add chopped onion and garlic, cooking until soft and fragrant.",
+            "Add ground beef to the pan, breaking it up with a spoon, and cook until browned.",
+            "Stir in tomato paste and canned tomatoes, cooking for 10-15 minutes until the sauce thickens.",
+            "Season with salt, pepper, and basil.",
+            "Meanwhile, cook the spaghetti according to the package instructions. Drain and set aside.",
+            "Serve the spaghetti with the Bolognese sauce on top and sprinkle with parmesan cheese."
+        ]
+    },
+    {
+        "name": "Classic Pancakes",
+        "description": "Fluffy and golden pancakes perfect for a delicious breakfast. Serve with syrup, butter, or fresh fruits.",
+        "image": "https://i.cbc.ca/1.5020044.1619027483!/fileImage/httpImage/classic-pancakes.jpg",
+        "cookingTime": "20 mins",
+        "category": "BREAKFAST",
+        "ingredients": [
+            {
+                "name": "All-purpose Flour",
+                "quantity": 1,
+                "measuringUnit": "cup",
+                "abbreviation": "cup"
+            },
+            {
+                "name": "Baking Powder",
+                "quantity": 1,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tsp"
+            },
+            {
+                "name": "Sugar",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            },
+            {
+                "name": "Salt",
+                "quantity": 0.25,
+                "measuringUnit": "teaspoon",
+                "abbreviation": "tsp"
+            },
+            {
+                "name": "Milk",
+                "quantity": 0.75,
+                "measuringUnit": "cup",
+                "abbreviation": "cu["
+            },
+            {
+                "name": "Egg",
+                "quantity": 1,
+                "measuringUnit": "piece",
+                "abbreviation": "pcs"
+            },
+            {
+                "name": "Butter",
+                "quantity": 2,
+                "measuringUnit": "tablespoon",
+                "abbreviation": "tbsp"
+            }
+        ],
+        "instructions": [
+            "In a bowl, mix flour, baking powder, sugar, and salt.",
+            "In another bowl, whisk together milk, egg, and melted butter.",
+            "Gradually combine the wet ingredients with the dry ingredients until just mixed.",
+            "Heat a skillet or griddle over medium heat and lightly grease with butter or oil.",
+            "Pour 1/4 cup batter onto the skillet and cook until bubbles form on the surface, then flip and cook the other side until golden brown.",
+            "Serve warm with your favorite toppings like syrup or fresh fruits."
+        ]
+    },
+    {
+        "name": "Chocolate Lava Cake",
+        "description": "A rich and decadent chocolate cake with a gooey molten center, perfect for a sweet treat.",
+        "image": "https://www.billyparisi.com/wp-content/uploads/2022/02/lava-cake-1.jpg",
+        "cookingTime": "20 mins",
+        "category": "DESSERT",
+        "ingredients": [
+          { "name": "Dark Chocolate", "quantity": 100, "measuringUnit": { "name": "grams", "abbreviation": "gm" } },
+          { "name": "Butter", "quantity": 4, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Sugar", "quantity": 0.25, "measuringUnit": { "name": "cup", "abbreviation": "cup" } },
+          { "name": "Eggs", "quantity": 2, "measuringUnit": { "name": "pieces", "abbreviation": "pcs" } },
+          { "name": "Vanilla Extract", "quantity": 1, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "All-Purpose Flour", "quantity": 2, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Cocoa Powder", "quantity": 1, "measuringUnit": { "name": "tablespoon", "abbreviation": "tbsp" } },
+          { "name": "Salt", "quantity": 0.125, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Powdered Sugar", "quantity": null, "measuringUnit": { "name": "for garnish", "abbreviation": "for garnish" } }
+        ],
+        "instructions": [
+          "Preheat the oven to 425°F (220°C) and grease two ramekins with butter.",
+          "Melt the dark chocolate and butter together in a microwave or over a double boiler. Stir until smooth.",
+          "In a separate bowl, whisk eggs, sugar, and vanilla extract until light and fluffy.",
+          "Gently fold the melted chocolate mixture into the egg mixture.",
+          "Sift in the flour, cocoa powder, and salt. Mix until just combined.",
+          "Pour the batter evenly into the ramekins.",
+          "Bake for 10-12 minutes, until the edges are set but the center remains gooey.",
+          "Let the cakes cool for 1-2 minutes, then carefully invert them onto plates.",
+          "Dust with powdered sugar and serve warm."
+        ]
+      },
+      {
+        "name": "Grilled Chicken Caesar Salad",
+        "description": "A fresh and flavorful Caesar salad topped with juicy grilled chicken, crispy croutons, and parmesan cheese.",
+        "image": "https://www.eatingbirdfood.com/wp-content/uploads/2023/06/grilled-chicken-caesar-salad-hero.jpg",
+        "cookingTime": "25 mins",
+        "category": "SALAD",
+        "ingredients": [
+          { "name": "Chicken Breast", "quantity": 1, "measuringUnit": { "name": "pieces", "abbreviation": "pcs" } },
+          { "name": "Romaine Lettuce", "quantity": 1, "measuringUnit": { "name": "head", "abbreviation": "head" } },
+          { "name": "Parmesan Cheese", "quantity": 2, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Croutons", "quantity": 0.5, "measuringUnit": { "name": "cup", "abbreviation": "cup" } },
+          { "name": "Caesar Dressing", "quantity": 3, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Olive Oil", "quantity": 1, "measuringUnit": { "name": "tablespoon", "abbreviation": "tbsp" } },
+          { "name": "Salt", "quantity": 0.5, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Pepper", "quantity": 0.25, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Garlic Powder", "quantity": 0.5, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Lemon Juice", "quantity": 1, "measuringUnit": { "name": "tablespoon", "abbreviation": "tbsp" } }
+        ],
+        "instructions": [
+          "Preheat a grill or pan over medium heat.",
+          "Brush the chicken breast with olive oil and season with salt, pepper, and garlic powder.",
+          "Grill the chicken for 5-7 minutes on each side until fully cooked. Let it rest for a few minutes before slicing.",
+          "Chop the romaine lettuce and place it in a large bowl.",
+          "Add croutons, parmesan cheese, and Caesar dressing. Toss everything together.",
+          "Top the salad with sliced grilled chicken and drizzle with lemon juice.",
+          "Serve immediately and enjoy!"
+        ]
+      },
+      {
+        "name": "Beef Burger",
+        "description": "A juicy and flavorful beef burger served with fresh toppings on a toasted bun.",
+        "image": "https://www.allrecipes.com/thmb/_OKqViGmlNaa9GV_c4cpwpwApGk=/0x512/filters:no_upscale():max_bytes(150000):strip_icc()/25473-the-perfect-basic-burger-DDMFS-4x3-56eaba3833fd4a26a82755bcd0be0c54.jpg",
+        "cookingTime": "45 mins",
+        "category": "LUNCH",
+        "ingredients": [
+          { "name": "Ground Beef", "quantity": 400, "measuringUnit": { "name": "grams", "abbreviation": "g," } },
+          { "name": "Salt", "quantity": 1, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Black Pepper", "quantity": 0.5, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Garlic Powder", "quantity": 0.5, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Onion Powder", "quantity": 0.5, "measuringUnit": { "name": "teaspoon", "abbreviation": "tsp" } },
+          { "name": "Burger Buns", "quantity": 4, "measuringUnit": { "name": "pieces", "abbreviation": "pcs" } },
+          { "name": "Cheese Slices", "quantity": 4, "measuringUnit": { "name": "slices", "abbreviation": "slices" } },
+          { "name": "Lettuce", "quantity": 4, "measuringUnit": { "name": "leaves", "abbreviation": "leaves" } },
+          { "name": "Tomato", "quantity": 1, "measuringUnit": { "name": "medium", "abbreviation": "medium" } },
+          { "name": "Onion", "quantity": 1, "measuringUnit": { "name": "small", "abbreviation": "small" } },
+          { "name": "Pickles", "quantity": 4, "measuringUnit": { "name": "slices", "abbreviation": "slices" } },
+          { "name": "Mayonnaise", "quantity": 2, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Ketchup", "quantity": 2, "measuringUnit": { "name": "tablespoons", "abbreviation": "tbsp" } },
+          { "name": "Mustard", "quantity": 1, "measuringUnit": { "name": "tablespoon", "abbreviation": "tbsp" } },
+          { "name": "Butter", "quantity": 1, "measuringUnit": { "name": "tablespoon", "abbreviation": "tbsp" } }
+        ],
+        "instructions": [
+          "Preheat a grill or pan over medium-high heat.",
+          "In a bowl, mix ground beef with salt, black pepper, garlic powder, and onion powder. Form into 4 equal patties.",
+          "Cook the burger patties for 4-5 minutes per side or until they reach your desired doneness.",
+          "Add a slice of cheese on top of each patty and let it melt.",
+          "Toast the burger buns with butter in a pan until golden brown.",
+          "Slice the tomato and onion into thin rounds.",
+          "Spread mayonnaise, ketchup, and mustard on the bottom half of each bun.",
+          "Layer lettuce, tomato slices, onion slices, and pickles on top.",
+          "Place the cooked burger patty with melted cheese on the toppings.",
+          "Cover with the top bun and serve immediately."
+        ]
+      }
+      
+]

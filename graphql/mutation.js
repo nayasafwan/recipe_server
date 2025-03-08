@@ -1,12 +1,13 @@
 const { GraphQLString, GraphQLList, GraphQLObjectType } = require('graphql');
-const {RecipeType, IngredientInput} = require("./query")
-const databaseRecipe = require("../controllers/recipe.controller")
+const {RecipeResultType, IngredientInput} = require("./query")
+const databaseRecipe = require("../controllers/recipe.controller");
+const logger = require('../logger');
 
 const Mutation = new GraphQLObjectType({
     name : "Mutation",
     fields : {
         postRecipe : {
-            type : RecipeType,
+            type : RecipeResultType,
             args : {
                 name : { type: GraphQLString },
                 description : { type: GraphQLString }, 
@@ -17,8 +18,14 @@ const Mutation = new GraphQLObjectType({
                 instructions: { type: new GraphQLList(GraphQLString) },
             },
             async resolve(parent, args) {
-              await databaseRecipe.createRecipe(args)
-             return args
+                try{
+                    await databaseRecipe.createRecipe(args)
+                    return args
+                }
+                catch(err){
+                    logger.error('Error creating recipe: ', err);
+                    return {error : "Error creating recipe", code : 400}
+                }
             }
         }
     }

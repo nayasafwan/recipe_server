@@ -37,6 +37,7 @@ const IngredientInput = new GraphQLInputObjectType({
     name: { type: GraphQLString },
     quantity: { type: GraphQLFloat },
     measuringUnit: { type: GraphQLString },
+    abbreviation : { type: GraphQLString }
   },
 });
 
@@ -48,6 +49,7 @@ const IngredientType = new GraphQLObjectType({
     name: { type: GraphQLString },
     quantity: { type: GraphQLFloat },
     measuringUnit: { type: GraphQLString },
+    abbreviation : { type: GraphQLString }
   }),
 });
 
@@ -140,8 +142,8 @@ const RootQuery = new GraphQLObjectType({
     recipes: {
       type: RecipesList,
       args: {
-        skip: { type: GraphQLInt },
-        take: { type: GraphQLInt },
+        skip: { type: GraphQLInt, defaultValue: 0 },
+        take: { type: GraphQLInt, defaultValue: 10 },
         category: { type: GraphQLString },
         search: { type: GraphQLString },
       },
@@ -197,14 +199,10 @@ const RootQuery = new GraphQLObjectType({
         id: { type: GraphQLID },
       },
       resolve: async (parent, args) => {
-        return await prisma.user.findUnique({
-          where: {
-            id: args.id,
-          },
-        });
+        return "User";
       },
     },
   },
 });
 
-module.exports = { RootQuery, RecipeType, IngredientInput, UserType };
+module.exports = { RootQuery, RecipeType, IngredientInput, UserType, RecipeResultType };

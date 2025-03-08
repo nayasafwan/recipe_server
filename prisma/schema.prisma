@@ -10,8 +10,9 @@ generator client {
 
 datasource db {
   provider = "mysql"
-  url      = env("DATABASE_URL")
+  url = env("MYSQL_DATABASE_URL")
 }
+
 
 enum Category {
   Breakfast
@@ -37,6 +38,20 @@ model Recipe {
     instructions Instruction[] 
 }
 
+enum MeasuringUnit {
+  Gram // gm
+  Kilogram  // kg
+  Teaspoon // tsp
+  Tablespoon // tbsp
+  Miligram     // mg
+  Pound         // lb
+  Ounce         // oz
+  Pieces // pcs 
+  Liter // L
+  Milliter // ml
+  Cup // cup 
+  Gallon   // gal
+}
 
 
 model Ingredient {
@@ -44,6 +59,7 @@ model Ingredient {
   quantity  Float
   name String
   measuringUnit String?
+  abbreviation String?
   recipeId String
   recipe Recipe @relation(fields: [recipeId], references: [id])
 }
