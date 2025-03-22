@@ -76,8 +76,7 @@ class DatabaseRecipe {
             const countRecipes = await prisma.recipe.count({
                 where: condition
             })
-            
-            console.log({recipes : allRecipes, count : countRecipes});
+
             return {recipes : allRecipes, count : countRecipes};
         } catch (err) {
             logger.error('Error getting recipes: ', err);

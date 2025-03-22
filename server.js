@@ -6,8 +6,7 @@ dotenv.config();
 const { RootQuery } = require("./graphql/query")
 const Mutation = require("./graphql/mutation");
 const {GraphQLSchema} = require("graphql");
-const path = require("path");
-
+const { applyMiddleware } = require('graphql-middleware');
 
 
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
@@ -42,12 +41,11 @@ const schema = new GraphQLSchema({
     mutation: Mutation
 })
 
+const schemaWithMiddleware = applyMiddleware(schema)
 
 app.use("/graphql", graphqlHTTP({ 
-    schema,
-    graphiql: {
-        editorTheme: "dark",
-    },
+    schema : schemaWithMiddleware,
+    graphiql: true
  }));
 
 

@@ -67,7 +67,7 @@ const ErrorMessageType = new GraphQLObjectType({
   name: "ErrorMessage",
   fields: () => ({
     error: { type: GraphQLString },
-    code: { type: GraphQLString },
+    code: { type: GraphQLInt },
   }),
 });
 
@@ -156,8 +156,7 @@ const RootQuery = new GraphQLObjectType({
         }
 
         const recipes = await recipeCache.getCachedRecipes(args);
-        console.log(recipes);
-        return await recipeCache.getCachedRecipes(args);
+        return recipes
       },
     },
     recipe: {
@@ -167,6 +166,7 @@ const RootQuery = new GraphQLObjectType({
       },
       resolve: async (parent, args) => {
         const cachedRecipe = await recipeCache.getCachedRecipeById(args.id);
+        console.log("Cached recipe ", cachedRecipe);
         if (cachedRecipe) {
           return cachedRecipe;
         }
@@ -178,13 +178,13 @@ const RootQuery = new GraphQLObjectType({
         if (!recipe) {
           return {
                 error: "Recipe not found",
-                code: "400",
+                code: 400,
             }
         }
 
         if (isCachEmpty) {
           //if cache is empty, cache all recipes
-          recipeCache.cashRecipes();
+          cache.cacheData();
         } else {
           //if cache is not empty, get recipe by id and cache it
           recipeCache.addRecipeToCache();

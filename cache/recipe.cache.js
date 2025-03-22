@@ -46,7 +46,7 @@ class RecipeCache {
 
     async getCachedRecipeById (id) {
         const redisValue = await client.get("allRecipes");
-        const allRecipes = JSON.parse(redisValue);
+        const allRecipes = redisValue ? JSON.parse(redisValue) : null;
 
         if(!allRecipes) return null;
         

@@ -11,7 +11,6 @@ class Cache {
         const client = createClient()
 
         client.connect()
-        
         client.flushAll()
         this.client = client; 
     }
@@ -33,7 +32,11 @@ class Cache {
 
     async isCachEmptyFunc () {
         const keys = await this.client.keys('*'); 
-        return keys.length === 0;  // If no keys, cache is empty
+
+        if(keys && keys.length > 0){
+            return false;
+        }
+        return true;
     }
 
 }
