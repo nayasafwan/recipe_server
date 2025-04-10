@@ -8,4 +8,4 @@ const prisma = new PrismaClient();
  * npx prisma migrate dev
  */
 
-module.exports = {prisma}
+module.exports = {prisma} 

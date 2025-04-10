@@ -19,7 +19,12 @@ class DatabaseRecipe {
                         create : ingredients
                     },
                     instructions : {
-                        create : instructions
+                        create : instructions.map((instruction, index) => {
+                            return {
+                                name : instruction,
+                                order : index + 1
+                            }
+                        })
                     }
                 }
             })

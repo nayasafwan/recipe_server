@@ -66,7 +66,7 @@ const InstructionType = new GraphQLObjectType({
 const ErrorMessageType = new GraphQLObjectType({
   name: "ErrorMessage",
   fields: () => ({
-    error: { type: GraphQLString },
+    message: { type: GraphQLString },
     code: { type: GraphQLInt },
   }),
 });
@@ -129,7 +129,7 @@ const RecipeResultType = new GraphQLUnionType({
     name: "RecipeResult",
     types: [RecipeType, ErrorMessageType],
     resolveType(value) {
-        if(value.error) {
+        if(value.message) {
             return "ErrorMessage"
         }
         return "Recipe"
@@ -177,7 +177,7 @@ const RootQuery = new GraphQLObjectType({
 
         if (!recipe) {
           return {
-                error: "Recipe not found",
+                message: "Recipe not found",
                 code: 400,
             }
         }
@@ -194,15 +194,20 @@ const RootQuery = new GraphQLObjectType({
       },
     },
     user: {
-      type: UserType,
-      args: {
-        id: { type: GraphQLID },
-      },
-      resolve: async (parent, args) => {
-        return "User";
-      },
+      type : ErrorMessageType,
+      resolve (parent, args, context) {
+          const {req} = context;
+
+          if( !req.session.user ){
+              return {message : "Unauthorized", code : 401}
+          }
+          return {
+              message : "Session is valid", 
+              code : 200
+          }
+      }
     },
   },
 });
 
-module.exports = { RootQuery, RecipeType, IngredientInput, UserType, RecipeResultType };
+module.exports = { RootQuery, RecipeType, IngredientInput, UserType, RecipeResultType, ErrorMessageType };

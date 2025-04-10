@@ -15,11 +15,12 @@ const prismaMock = prisma
 
 
 
+
 describe('Recipe test API', () => {
+
     beforeEach(()=>{
         mockReset(prismaMock);
-    })
-    
+    })    
 
     it("fetches recipes based on page and limit", async()=>{
 
@@ -106,16 +107,15 @@ describe('Recipe test API', () => {
             query: `query {
                 recipe(id: 5245){
                   ... on ErrorMessage {
-                    error,
+                    message,
                     code
                   }
                 }
             }`
         });
 
-
         expect(res.body.data.recipe.code).toEqual(400);
-        expect(res.body.data.recipe.error).toEqual("Recipe not found");
+        expect(res.body.data.recipe.message).toEqual("Recipe not found");
     })
 })
 

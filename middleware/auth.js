@@ -1,9 +1,9 @@
-const authenticate = (req, res, next) => {
-    const token = req.headers.authorization;
+// const authenticate = (req, res, next) => {
+//     const token = req.headers.authorization;
     
-    if(!token) {
-        return res.status(401).json({ message: "Token is required" });
-    }
+//     if(!token) {
+//         return res.status(401).json({ message: "Token is required" });
+//     }
 
-    next();
-};
+//     next();
+// };
