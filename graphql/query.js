@@ -71,6 +71,15 @@ const ErrorMessageType = new GraphQLObjectType({
   }),
 });
 
+
+const UserType = new GraphQLObjectType({
+  name: "User",
+  fields : () =>({
+    usernmae : { type: GraphQLString },
+    code : { type: GraphQLInt },
+  })
+})
+
 const DateScalar = new GraphQLScalarType({
   name: "Date",
   description: "Custom Date type",
@@ -115,15 +124,15 @@ const RecipesList = new GraphQLObjectType({
 
 
 //return type
-const UserType = new GraphQLObjectType({
-  name: "User",
-  fields: () => ({
-    id: { type: GraphQLID },
-    username: { type: GraphQLString },
-    email: { type: GraphQLString },
-    password: { type: GraphQLString },
-  }),
-});
+// const UserType = new GraphQLObjectType({
+//   name: "User",
+//   fields: () => ({
+//     id: { type: GraphQLID },
+//     username: { type: GraphQLString },
+//     email: { type: GraphQLString },
+//     password: { type: GraphQLString },
+//   }),
+// });
 
 const RecipeResultType = new GraphQLUnionType({
     name: "RecipeResult",
@@ -194,15 +203,15 @@ const RootQuery = new GraphQLObjectType({
       },
     },
     user: {
-      type : ErrorMessageType,
+      type : UserType,
       resolve (parent, args, context) {
           const {req} = context;
 
           if( !req.session.user ){
-              return {message : "Unauthorized", code : 401}
+              return {username : null, code : 401}
           }
           return {
-              message : "Session is valid", 
+              username : req.session.user.username, 
               code : 200
           }
       }

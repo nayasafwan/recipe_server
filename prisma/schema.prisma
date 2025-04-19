@@ -36,6 +36,8 @@ model Recipe {
     createdAt DateTime     @default(now())
     ingredients Ingredient[]
     instructions Instruction[] 
+    user User @relation(fields : [user_id], references : [id])
+    user_id String
 }
 
 enum MeasuringUnit {
@@ -77,5 +79,6 @@ model User {
   email String @unique
   password String
   username String @unique
+  recipes Recipe[]
 }
 

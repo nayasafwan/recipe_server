@@ -70,7 +70,7 @@ const Mutation = new GraphQLObjectType({
                         email: newUser.email,
                     }
 
-                    return {message : "User created successfully", code : 200}
+                    return {message : "User created successfully", code : 200, username : newUser.username}
                 } 
                 catch(err){
                     logger.error('Error creating user: ', err);
@@ -120,7 +120,7 @@ const Mutation = new GraphQLObjectType({
                         email: user.email,
                     }
 
-                    return {message : "User logged in successfully", code : 200}
+                    return {message : "User logged in successfully", code : 200, username : user.username}
                 } 
                 catch(err){
                     logger.error('Error logging in user: ', err);
