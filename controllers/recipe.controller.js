@@ -4,7 +4,7 @@ const logger = require("../logger");
 
 class DatabaseRecipe {
 
-    async createRecipe(recipe){
+    async createRecipe(recipe, user_id){
 
         const {name, description, image, cookingTime, category, ingredients, instructions} = recipe;
         try{
@@ -25,7 +25,8 @@ class DatabaseRecipe {
                                 order : index + 1
                             }
                         })
-                    }
+                    },
+                    user_id
                 }
             })
 
@@ -108,6 +109,18 @@ class DatabaseRecipe {
 
     async countRecipes () {
         return await prisma.recipe.count();
+    }
+
+    async editRecipe(id, data) {
+        await prisma.recipe.update({
+                where : {
+                        id : id
+                    },
+                data : {
+                    ...data
+                }
+            }
+        )
     }
 
 }

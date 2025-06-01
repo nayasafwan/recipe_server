@@ -37,6 +37,20 @@ class DatabaseUser {
         return user;
     }
 
+    async getUserRecipes(id) {
+        const recipes = await prisma.recipe.findMany({
+        where: {
+            user_id: id, 
+        },
+        include: {
+            ingredients: true,
+            instructions: true,
+        },
+        });
+
+        return recipes
+    }
+
 }
 
 module.exports = new DatabaseUser();

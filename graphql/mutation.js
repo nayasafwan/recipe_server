@@ -1,5 +1,5 @@
 const { GraphQLString, GraphQLList, GraphQLObjectType, GraphQLNonNull } = require('graphql');
-const {RecipeResultType, IngredientInput, ErrorMessageType} = require("./query")
+const {RecipeResultType, IngredientInput, ErrorMessageType} = require("./type")
 const databaseRecipe = require("../controllers/recipe.controller");
 const databaseUser = require("../controllers/user.controller");
 const logger = require('../logger');
@@ -30,7 +30,36 @@ const Mutation = new GraphQLObjectType({
                     if(!req || !req.session.user ){
                         return {message : "Unauthorized", code : 401}
                     }
-                    await databaseRecipe.createRecipe(args)
+                    await databaseRecipe.createRecipe(args, req.session.user.id)
+                    return args
+                }
+                catch(err){
+                    logger.error('Error creating recipe: ', err);
+                    return {message : "Error creating recipe", code : 400}
+                }
+            }
+        },
+        editRecipe : {
+            type : RecipeResultType,
+            args : {
+                id : {type : GraphQLString},
+                name : { type: GraphQLString },
+                description : { type: GraphQLString }, 
+                image : { type: GraphQLString },
+                category : { type: GraphQLString }, 
+                cookingTime : { type: GraphQLString },
+                ingredients: { type: new GraphQLList(IngredientInput) },
+                instructions: { type: new GraphQLList(GraphQLString) },
+            },
+            async resolve(parent, args, context) {
+                try{
+
+                    const {req} = context;
+
+                    if(!req || !req.session.user ){
+                        return {message : "Unauthorized", code : 401}
+                    }
+                    await databaseRecipe.editRecipe(args.id, args)
                     return args
                 }
                 catch(err){
@@ -74,7 +103,7 @@ const Mutation = new GraphQLObjectType({
                 } 
                 catch(err){
                     logger.error('Error creating user: ', err);
-                    return {message : err.toString(), code : 400}
+                    return {message : err, code : 400}
                 }
             }
         },
