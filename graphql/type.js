@@ -28,16 +28,7 @@ const CategoryEnumType = new GraphQLEnumType({
   },
 });
 
-//Input from postRecipe mutation
-const IngredientInput = new GraphQLInputObjectType({
-  name: "IngredientInput",
-  fields: {
-    name: { type: GraphQLString },
-    quantity: { type: GraphQLFloat },
-    measuringUnit: { type: GraphQLString },
-    abbreviation : { type: GraphQLString }
-  },
-});
+
 
 //return type
 const IngredientType = new GraphQLObjectType({
@@ -122,13 +113,7 @@ const RecipeType = new GraphQLObjectType({
   }),
 });
 
-const RecipesList = new GraphQLObjectType({
-  name: "RecipesList",
-  fields: () => ({
-    recipes: { type: new GraphQLList(RecipeType) },
-    count: { type: GraphQLInt },
-  })
-})
+
 
 
 

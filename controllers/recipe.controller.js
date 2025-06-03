@@ -117,7 +117,15 @@ class DatabaseRecipe {
                         id : id
                     },
                 data : {
-                    ...data
+                    ...data,
+                    instructions : {
+                        create : data.instructions.map((instruction, index) => {
+                            return {
+                                name : instruction,
+                                order : index + 1
+                            }
+                        })
+                    },
                 }
             }
         )

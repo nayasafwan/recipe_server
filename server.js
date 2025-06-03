@@ -4,10 +4,15 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { graphqlHTTP } = require('express-graphql');
 dotenv.config();
-const { RootQuery } = require("./graphql/query")
-const Mutation = require("./graphql/mutation");
-const {GraphQLSchema} = require("graphql");
+// const { RootQuery } = require("./graphql/query")
+// const Mutation = require("./graphql/mutation");
+const {GraphQLSchema, GraphQLObjectType} = require("graphql");
 const { applyMiddleware } = require('graphql-middleware');
+const { getErrorCode } = require("./utils");
+const recipeResolvers = require("./resolvers/recipe.resolvers")
+const userResolvers = require("./resolvers/user.resolvers")
+const recipeQueries = require("./queries/recipe.queries")
+const userQueries = require("./queries/user.queries")
 
 
 
@@ -50,8 +55,20 @@ app.use(express.json());
 
 
 const schema = new GraphQLSchema({
-    query: RootQuery,
-    mutation: Mutation
+    query: new GraphQLObjectType({
+          name: "RootQueryType",
+        fields: {
+            ...userQueries,
+            ...recipeQueries
+        }
+    }),
+    mutation: new GraphQLObjectType({
+         name : "Mutation",
+        fields : {
+            ...recipeResolvers,
+            ...userResolvers
+        }
+    })
 })
 
 const schemaWithMiddleware = applyMiddleware(schema)
@@ -62,7 +79,13 @@ app.use("/graphql",  graphqlHTTP((req, res)=> {
         schema: schemaWithMiddleware,
         graphiql: true,
         context: {req, res},
-        graphiql : true
+        graphiql : true,
+        customFormatErrorFn: (err) => { 
+            console.log("first errr ", err)
+            const error = getErrorCode(err.message)
+            console.log("return value ", error)
+            return ({ message: error.message, statusCode: error.statusCode })
+        }
     }
 }));
 

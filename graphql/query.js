@@ -86,7 +86,6 @@ const RootQuery = new GraphQLObjectType({
           }
           return {
               username : req.session.user.username, 
-              code : 200
           }
       }
     },
